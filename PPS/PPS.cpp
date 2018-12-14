@@ -267,7 +267,7 @@ void greatestIn4() {
 }
 // #19
 void gradingSystem() {
-	cout << "Trust me, this one is better than LMS! :P";
+	cout << "Trust me, this one is better than LMS! :P\n";
 	int marks;
 	cout << "Enter user marks: ";
 	cin >> marks;
@@ -306,6 +306,26 @@ void EvenOrOdd() {
 	}
 }
 // #21
+void timeDifferenceBata() {
+	int time1hours, time2hours;
+	int time1mins, time2mins;
+	cout << "Enter time1 hours: ";
+	cin >> time1hours;
+	cout << "Enter time1 mintues: ";
+	cin >> time1mins;
+	cout << "Enter time2 hours: ";
+	cin >> time2hours;
+	cout << "Enter time2 mintues: ";
+	cin >> time2mins;
+	int time1InSeconds = time1hours * 60 * 60 + time1mins * 60;
+	int time2InSeconds = time2hours * 60 * 60 + time2mins * 60;
+	int timeDifference = time2InSeconds - time1InSeconds;
+	if (timeDifference < 0) timeDifference *= -1;
+	int differenceHours = timeDifference / 60 / 60;
+	int differenceMins = (timeDifference / 60) - differenceHours * 60;
+	cout << differenceHours << " hours "
+		<< differenceMins << " mins of difference";
+}
 // #22
 // #23
 // #24
@@ -598,6 +618,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	greatestIn3TheNestedWay();
+	timeDifferenceBata();
 }
 
