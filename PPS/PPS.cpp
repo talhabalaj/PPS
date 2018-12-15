@@ -8,7 +8,8 @@
 */
 
 #include <iostream>
-
+#include <string>
+#include <iomanip>
 using namespace std;
 
 // #1  
@@ -327,9 +328,57 @@ void timeDifferenceBata() {
 		<< differenceMins << " mins of difference";
 }
 // #22
+void differentOrSame() {
+	int a, b, c;
+	cout << "Enter a b c: ";
+	cin >> a >> b >> c;
+	if (a == b && b == c) cout << "All are same";
+	else if (a == b || a == c || b == c) cout << "two are Exactly same";
+	else cout << "All are different";
+}
 // #23
+void sumOf10() {
+	int n = 10, sum = 0;
+	int number;
+	while (n >= 1) {
+		cout << "enter a number: ";
+		cin >> number;
+		sum += number;
+		n--;
+	}
+	cout << "Sum: " << sum;
+}
 // #24
+void sumOfN() {
+	int n, sum = 0;
+	int number;
+	cout << "Enter n: ";
+	cin >> n;
+	while (n >= 1) {
+		cout << "enter a number: ";
+		cin >> number;
+		sum += number;
+		n--;
+	}
+	cout << "Sum: " << sum;
+}
 // #25
+void avgOfN() {
+	int n, sum = 0;
+	int number;
+	cout << "Enter n: ";
+	cin >> n;
+	int count = n;
+	while (n >= 1) {
+		cout << "enter a number: ";
+		cin >> number;
+		sum += number;
+		n--;
+	}
+	cout << "Sum: " << sum;
+	cout << "Average: " << (double)sum / count;
+
+}
 // #26 
 void printRange() {
 	int n, i = 1;
@@ -347,8 +396,42 @@ void printRange() {
 	}
 }
 // #27
+void getFactorial() {
+	int fact = 1;
+	int number;
+	cout << "Enter a number to find its factorial: ";
+	cin >> number;
+	while (number >= 1) {
+		fact *= number;
+		number--;
+	}
+	cout << "Factorial: " << fact;
+}
 // #28
+void getPower() {
+	int a, n, result = 1;
+	cout << "Enter number: ";
+	cin >> a;
+	cout << "Enter power: ";
+	cin >> n;
+	while (n >= 1) {
+		result *= a;
+		n--;
+	}
+	cout << "Result: " << result; 
+}
 // #29
+void greatestIn3TheLoopWay() {
+	int n = 3, large = 0;
+	while (n > 0) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number > large) large = number;
+		n--;
+	}
+	cout << "The largest: " << large; 
+}
 // #30
 void largestInNNumbers() {
 	int n, large = 0, number;
@@ -364,6 +447,30 @@ void largestInNNumbers() {
 	cout << "Largest Number: " << large;
 }
 // #31
+void largestAndSmallest() {
+	bool firstRun = 1;
+	int large = 0, small;
+	int n;
+	cout << "Enter limit: ";
+	cin >> n;
+	while (n > 0) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (firstRun) {
+			small = number;
+			firstRun = false;
+		}
+		if (number < small) {
+			small = number;
+		}
+		if (number > large) {
+			large = number;
+		}
+		n--;
+	}
+	cout << "Largest: " << large << " Smallest: " << small;
+}
 // #32
 void countPosNegNumbers() {
 	int n, positive = 0, negative = 0;
@@ -386,8 +493,55 @@ void countPosNegNumbers() {
 
 }
 // #33
+void displayDivisors() {
+	int number;
+	cout << "Enter a number to find its divisors: ";
+	cin >> number;
+	int i = 1;
+	while (i < number) {
+		if (number % i == 0) {
+			cout << i << endl;
+		}
+		i++;
+	}
+}
 // #34
+void isPerfectNumber() {
+	int number, sum = 0;
+	cout << "Enter a number: ";
+	cin >> number;
+	int i = 1;
+	while (i < number) {
+		if (number % i == 0) {
+			sum += i;
+		}
+		i++;
+	}
+	if (sum == number) {
+		cout << "Perfect Integer";
+	}
+	else {
+		cout << "Not Perfect Integer";
+	}
+}
 // #35
+void isOptimusPrime() {
+	// just kidding just checks if the number 
+	// is  prime. doesn't check optimus prime 
+	// status
+	int number, d = 2, isPrime = 1;
+	cout << "Enter number: ";
+	cin >> number;
+	while (d < number) {
+		if (number % d == 0) {
+			isPrime = 0;
+			break;
+		}
+		d++;
+	}
+	if (isPrime) cout << "isPrime true";
+	else cout << "isPrime false";
+}
 // #36
 void inputValidation() {
 	int n;
@@ -401,8 +555,33 @@ void inputValidation() {
 	}
 }
 // #37
+void sumUntil999() {
+	int sum = 0;
+	while (1) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number == -999) break;
+		sum += number;
+	}
+	cout << "Sum: " << sum;
+}
 // #38
+void negativeBanaDay() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	cout << "Negative: " << -number;
+}
 // #39
+void absolute() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	if (number < 0)
+		cout << "Absolute: " << -number;
+	else cout << "Absolute: " << number;
+}
 // #40 
 void checkEvenOddTwoNumbers() {
 	int number1, number2;
@@ -422,6 +601,19 @@ void checkEvenOddTwoNumbers() {
 
 }
 // #41
+void countOdd() {
+	int odd = 0, n = 3;
+	while (n > 0) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number % 2 == 1) {
+			odd++;
+		}
+		n--;
+	}
+	cout << "Odd cout: " << odd;
+}
 // #42 
 void secondLargeAndLarge() {
 	int number, large = 0, secondLarge = 0, i = 1;
@@ -437,7 +629,37 @@ void secondLargeAndLarge() {
 	cout << "Largest: " << large << " Second Largest: " << secondLarge;
 }
 // #43
+void largestAndSecondLargest() {
+	int n, large = 0, secondLarge = 0, number;
+	cout << "Enter limit: ";
+	cin >> n;
+	while (n >= 1) {
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number > large) {
+			secondLarge = large;
+			large = number;
+		}
+		n--;
+	}
+	cout << "Largest Number: " << large;
+	cout << "Second Largest Number: " << secondLarge;
+}
 // #44
+void absoluteDifferenceBtwDigitsOfNumber() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	while (number > 99) {
+		cout << "Invalid. must be less than 100, Enter again: ";
+		cin >> number;
+	}
+	int digit1 = number / 10;
+	int digit2 = number % 10;
+	int diff = digit1 - digit2;
+	if (diff < 0) diff *= -1;
+	cout << diff;
+}
 // #45
 void reverseNumber() {
 	int number, reverse = 0;
@@ -569,6 +791,29 @@ void digitByDigitInputAndConversion() {
 // #69
 // #70
 // #71
+void decimalToHexa() {
+	int number; 
+	cout << "Enter a decimal-number: ";
+	cin >> number;
+	cout << "Hexa-decimal number (from least signaficant to most (reversed) ): ";
+	while (number > 0) {
+		int lastDigit = (number % 16);
+		if (lastDigit > 9) {
+			switch (lastDigit) {
+				case 10: cout << "A"; break;
+				case 11: cout << "B"; break;
+				case 12: cout << "C"; break;
+				case 13: cout << "D"; break;
+				case 14: cout << "E"; break;
+				case 15: cout << "F"; break;
+			}
+		}
+		else {
+			cout << lastDigit;
+		}
+		number /= 16;
+	}
+}
 // #72
 void accsendingOrder() {
 	int a, b, c;
@@ -597,7 +842,34 @@ void accsendingOrder() {
 
 }
 // #73
+void certainConditions() {
+	int temperature, pressure;
+	cout << "Enter tempeature: ";
+	cin >> temperature;
+	cout << "Enter pressure: ";
+	cin >> pressure;
+	if (temperature >= 100 || pressure >= 200) {
+		cout << "Warning";
+	}
+	else {
+		cout << "OK";
+	}
+}
 // #74
+void divideWithoutOperator() {
+	int divisor, toBeDivided;
+	int quotient = 0;
+	cout << "Enter a number to divide: ";
+	cin >> toBeDivided;
+	cout << "Enter a number to divide with: ";
+	cin >> divisor;
+	while (toBeDivided >= divisor) {
+		toBeDivided -= divisor;
+		quotient++;
+	}
+	cout << "Quotient: " << quotient; 
+	cout << "Remainder: " << toBeDivided;
+}
 // #75
 void modulusWithoutOperator() {
 	int divisor, toBeDivided;
@@ -618,6 +890,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	timeDifferenceBata();
+	absoluteDifferenceBtwDigitsOfNumber();
 }
 
