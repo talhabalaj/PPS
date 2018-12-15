@@ -690,7 +690,34 @@ void swapper() {
 	cout << "a= " << a << " b= " << b;
 }
 // #47
+void swapperv2() {
+	int a = 10, b = 5;
+	// before interchanging 
+	cout << "a= " << a << " b= " << b;
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	// after interchanging 
+	cout << "a= " << a << " b= " << b;
+}
 // #48
+void microSecondsAreNotReadable() {
+	long long int microseconds;
+	cout << "Enter some time in microseconds: ";
+	cin >> microseconds;
+	int weeks = (microseconds / 1000000) /60 /60 /24 / 7;
+	int days = (microseconds / 1000000) / 60 / 60 / 24 % 7;
+	int hours = (microseconds / 1000000) / 60 / 60 % 24;
+	int mins = (microseconds / 1000000) / 60 % 60;
+	int seconds = microseconds / 1000000 % 60;
+	int rMicrosseconds = microseconds % 1000000;
+	cout << weeks << " weeks "
+		<< days << " days "
+		<< hours << " hours "
+		<< mins << " mins "
+		<< seconds << " secs "
+		<< rMicrosseconds << " microseconds ";
+}
 // #49
 // #50
 // #51
@@ -890,6 +917,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	absoluteDifferenceBtwDigitsOfNumber();
+	microSecondsAreNotReadable();
 }
 
