@@ -719,6 +719,18 @@ void microSecondsAreNotReadable() {
 		<< rMicrosseconds << " microseconds ";
 }
 // #49
+void multipyWithSumofdigits() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	int sum = 0, backup = number;
+	while (number >= 1) {
+		int lastDigit = number % 10;
+		sum += lastDigit;
+		number /= 10;
+	}
+	cout << "Number multiplied with sum of digits: " << sum * backup;
+}
 // #50
 // #51
 // #52
@@ -917,6 +929,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	microSecondsAreNotReadable();
+	multipyWithSumofdigits();
 }
 
