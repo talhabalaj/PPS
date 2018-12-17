@@ -732,7 +732,31 @@ void multipyWithSumofdigits() {
 	cout << "Number multiplied with sum of digits: " << sum * backup;
 }
 // #50
+void is1stDivisable() {
+	int number1, number2;
+	cout << "Enter number1: ";
+	cin >> number1;
+	cout << "Enter number2: ";
+	cin >> number2;
+	if (number2 != 0) {
+		if (number1 % number2 == 0) {
+			cout << "YES";
+		}
+	}
+}
 // #51
+void is2ndDivisable() {
+	int number1, number2;
+	cout << "Enter number1: ";
+	cin >> number1;
+	cout << "Enter number2: ";
+	cin >> number2;
+	if (number1 != 0) {
+		if (number2 % number1 == 0) {
+			cout << "YES";
+		}
+	}
+}
 // #52
 void isDivisable() {
 	int number1, number2;
@@ -752,8 +776,46 @@ void isDivisable() {
 	}
 }
 // #53
+void sumUntilZero() {
+	int sum = 0;
+	while (1) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number == 0) break;
+		sum += number;
+	}
+	cout << "Sum: " << sum;
+}
 // #54
+void lastNonZero() {
+	int lastNonZero = -1;
+	while (1) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number == 0) break;
+		else lastNonZero = number;
+	}
+	cout << lastNonZero;
+}
 // #55
+void largestNumber() {
+	int number = 1, firstRun = 1, large;
+	while (1) {
+		cout << "Enter number: ";
+		cin >> number;
+		if (firstRun) {
+			large = number;
+			firstRun = 0;
+		}
+		if (number = 0) break;
+		if (number > large) {
+			large = number;
+		}
+	}
+	cout << "Largest Number: " << large;
+}
 // #56
 void smallestNumber() {
 	int number = 1, firstRun = 1, small;
@@ -772,10 +834,82 @@ void smallestNumber() {
 	cout << "Smallest Number: " << small; 
 }
 // #57
+void smallestNumberIn10() {
+	int number, n = 10, firstRun = 1, small;
+	while (n > 0) {
+		cout << "Enter number: ";
+		cin >> number;
+		if (firstRun) {
+			small = number;
+			firstRun = 0;
+		}
+		if (number < small) {
+			small = number;
+		}
+		n--;
+	}
+	cout << "Smallest Number: " << small;
+}
 // #58
+void countOfEvenOdd() {
+	int odd = 0, even = 0, n = 10;
+	while (n > 0) {
+		int number;
+		cout << "Enter a number: ";
+		cin >> number;
+		if (number % 2 == 0) even++;
+		else odd++;
+		n--;
+	}
+	cout << "Even: " << even <<  "Odd: " << odd;
+}
 // #59
+void displayEvenInRange() {
+	int slimit, elimit, flag = 1;
+	do {
+		cout << "Enter slimit, elimit: ";
+		cin >> slimit >> elimit;
+	} while (slimit > elimit);
+	if (slimit % 10 == 0) flag = 0;
+	while (slimit <= elimit) {
+		if (flag == 0) {
+			cout << slimit << endl;
+			flag = 1;
+		}
+		else {
+			flag = 0;
+		}
+		slimit++;
+	}
+}
 // #60
+void divisableEitherby235() {
+	int slimit, elimit;
+	do {
+		cout << "Enter slimit, elimit: ";
+		cin >> slimit >> elimit;
+	} while (slimit > elimit);
+	while (slimit <= elimit) {
+		if (slimit % 2 == 0 || slimit % 3 == 0 || slimit % 5 == 0) {
+			cout << slimit << endl;
+		}
+		slimit++;
+	}
+}
 // #61
+void divisableby235() {
+	int slimit, elimit;
+	do {
+		cout << "Enter slimit, elimit: ";
+		cin >> slimit >> elimit;
+	} while (slimit > elimit);
+	while (slimit <= elimit) {
+		if (slimit % 2 == 0 && slimit % 3 == 0 && slimit % 5 == 0) {
+			cout << slimit << endl;
+		}
+		slimit++;
+	}
+}
 // #62
 void gcd() {
 	int number1, number2;
@@ -803,8 +937,71 @@ void gcd() {
 
 }
 // #63
+void gcd3() {
+	int number1, number2, number3;
+	cout << "Enter number1: ";
+	cin >> number1;
+	cout << "Enter number2: ";
+	cin >> number2;
+	cout << "Enter number3: ";
+	cin >> number3;
+	int i = 1;
+	int gcd = 1;
+	while (i <= number1) {
+		if (number1 % i == 0) {
+			int j = 1;
+			while (j <= number2) {
+				if (number2 % i == 0) {
+					int k = 1;
+					while (k <= number3) {
+						if (number3 % k == 0) {
+							if (i == j && k == i) {
+								gcd = i;
+							}
+						}
+						k++;
+					}
+					
+				}
+				j++;
+			}
+		}
+		i++;
+	}
+	cout << gcd;
+}
 // #64
+void lcm() {
+	int number1, number2;
+	cout << "Enter number1, number2: ";
+	cin >> number1 >> number2;
+	int limit = 10;
+	int i = 1;
+	bool found = false;
+	while (i <= limit && found == false) {
+		int j = 1;
+		while (j <= limit && found == false) {
+			if (number1 * i == number2 * j) {
+				cout << "LCM=" << number1 * i;
+				found = true;
+			}
+			j++;
+		}
+		i++;
+	}
+}
 // #65
+void countDigits() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	int count = 0;
+	while (number >= 1) {
+		count++; 
+		number /= 10;
+	}
+	cout << "Count of digits: " << count;
+}
 // #66
 void digitByDigitInputAndConversion() {
 	int base9Number = 0, rbase9Number = 0, digit, sig = 0;
@@ -826,9 +1023,82 @@ void digitByDigitInputAndConversion() {
 	cout << base9Number << " -> " << base10Number;
 }
 // #67
+void digitByDigitConversion() {
+	int base9Number = 0, digit;
+	double base10Number = 0;
+	cout << "Enter a base-9 number so I can convert it to decimal"
+		<< endl;
+	while (1) {
+		cout << "Enter digit: ";
+		cin >> digit;
+		if (digit < 0 || digit > 8) break;
+		base9Number = base9Number * 10 + digit;
+	}
+	int backup = base9Number;
+	int sig = 0;
+	while (backup > 0) {
+		base10Number = base10Number + pow(9, sig) * (backup % 10);
+		sig++;
+		backup /= 10;
+	}
+	cout << base9Number << " -> " << base10Number;
+}
 // #68
+void convertToBase9() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	cout << "The number is from least significant to most.." << endl;
+	while (number >= 1) {
+		cout << number % 9 << endl;
+		number /= 9;
+	}
+}
 // #69
+void convertTobase9Properly() {
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	int rb9 = 0, b9 = 0; 
+	while (number >= 1) {
+		rb9 = rb9 * 10 + number % 9;
+		number /= 9;
+	}
+	while (rb9 >= 1) {
+		b9 = b9 * 10 + rb9 % 10;
+		rb9 /= 10;
+	}
+	cout << b9;
+}
 // #70
+void base9toBinary() {
+	int base9Number = 0, rbase9Number = 0, digit, sig = 0;
+	double base10Number = 0;
+	cout << "Enter a base-9 number so I can convert it to decimal"
+		<< endl;
+	while (1) {
+		cout << "Enter digit: ";
+		cin >> digit;
+		if (digit < 0 || digit > 8) break;
+		rbase9Number = rbase9Number * 10 + digit;
+		base10Number = base10Number + pow(9, sig) * digit;
+		sig++;
+	}
+	int bb = base10Number, rb2 = 0, b2= 0;
+	while (bb >= 1) {
+		rb2 = rb2 * 10 + (bb % 2);
+		bb /= 2;
+	}
+	while (rb2 >= 1) {
+		b2 = b2 * 10 + rb2 % 10;
+		rb2 /= 10;
+	}
+	while (rbase9Number >= 1) {
+		base9Number = base9Number * 10 + (rbase9Number % 10);
+		rbase9Number /= 10;
+	}
+	cout << base9Number << " -> " << base10Number<< " -> " << b2;
+}
 // #71
 void decimalToHexa() {
 	int number; 
@@ -929,6 +1199,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	multipyWithSumofdigits();
+	lcm();
 }
 
