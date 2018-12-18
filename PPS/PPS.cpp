@@ -923,7 +923,7 @@ void gcd() {
 		if (number1 % i == 0) {
 			int j = 1;
 			while (j <= number2) {
-				if (number2 % i == 0) {
+				if (number2 % j == 0) {
 					if (i == j) {
 						gcd = i;
 					}
@@ -951,7 +951,7 @@ void gcd3() {
 		if (number1 % i == 0) {
 			int j = 1;
 			while (j <= number2) {
-				if (number2 % i == 0) {
+				if (number2 % j == 0) {
 					int k = 1;
 					while (k <= number3) {
 						if (number3 % k == 0) {
