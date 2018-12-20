@@ -975,20 +975,22 @@ void lcm() {
 	int number1, number2;
 	cout << "Enter number1, number2: ";
 	cin >> number1 >> number2;
-	int limit = 10;
-	int i = 1;
-	bool found = false;
-	while (i <= limit && found == false) {
-		int j = 1;
-		while (j <= limit && found == false) {
-			if (number1 * i == number2 * j) {
-				cout << "LCM=" << number1 * i;
-				found = true;
-			}
-			j++;
+	int lcm = 1;
+	int d = 2;
+	while (number1 > 1 || number2 > 1) {
+		if (number1 % d == 0 || number2 % d == 0) { 
+			lcm *= d;
+			if (number1 % d == 0) number1 /= d;
+			if (number2 % d == 0) number2 /= d;
 		}
-		i++;
+		else {
+			d++;
+			if (number1 == 1) d = number2;
+			else if (number2 == 1) d = number1;
+		}			
+		cout << "Calculating: " << lcm << " " << number1 << " " << number2 << " " << d << endl;
 	}
+	cout << "LCM=" << lcm;
 }
 // #65
 void countDigits() {
