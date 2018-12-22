@@ -1143,13 +1143,14 @@ void accsendingOrder() {
 		}
 		if (b > c) {
 			int temp = c;
-			c = a;
-			a = temp;
+			c = b;
+			b = temp;
 		}
 		if (a < b && b < c) {
 			break;
 		}
 	}
+	cout << a << " " << b << " " << c;
 
 }
 // #73
@@ -1201,6 +1202,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	lcm();
+	accsendingOrder();
 }
 
