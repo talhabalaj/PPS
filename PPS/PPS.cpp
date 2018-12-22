@@ -870,7 +870,7 @@ void displayEvenInRange() {
 		cout << "Enter slimit, elimit: ";
 		cin >> slimit >> elimit;
 	} while (slimit > elimit);
-	if (slimit % 10 == 0) flag = 0;
+	if (slimit % 2 == 0) flag = 0;
 	while (slimit <= elimit) {
 		if (flag == 0) {
 			cout << slimit << endl;
@@ -1202,6 +1202,6 @@ int main()
 		<< endl
 		<< "Have a good day :)"
 		<< endl;
-	accsendingOrder();
+	displayEvenInRange();
 }
 
